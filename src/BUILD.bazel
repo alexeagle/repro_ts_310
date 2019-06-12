@@ -1,0 +1,23 @@
+load("@npm_bazel_typescript//:index.bzl", "ts_devserver", "ts_library")
+
+ts_library(
+    name = "ts_example",
+    srcs = [
+        "index.ts",
+    ],
+    deps = [
+        "@npm//@types/lodash",
+        "@npm//lodash",
+    ],
+)
+
+ts_devserver(
+    name = "devserver",
+    entry_module = "repro_ts_310/src/index",
+    serving_path = "/bundle.min.js",
+    deps = [
+        ":ts_example",
+        "@npm//node_modules/lodash:lodash__umd",
+    ],
+    index_html = ":index.html"
+)

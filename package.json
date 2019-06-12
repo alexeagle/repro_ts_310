@@ -1,0 +1,18 @@
+{
+    "name": "repro_ts_310",
+    "version": "0.1.0",
+    "private": true,
+    "devDependencies": {
+        "@bazel/bazel": "latest",
+        "@bazel/buildifier": "latest",
+        "@bazel/ibazel": "latest",
+        "@bazel/typescript": "latest",
+        "@types/lodash": "^4.14.134",
+        "lodash": "^4.17.11",
+        "typescript": "~3.4.0"
+    },
+    "scripts": {
+        "build": "bazel build //...",
+        "test": "bazel test //..."
+    }
+}
